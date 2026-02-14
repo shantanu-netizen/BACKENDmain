@@ -1,6 +1,14 @@
 import express from "express";
-import { createblog, getBlogs,blogsByName,AuthorById } from "./contollers/blogsContoller.mjs";
-import { createAuthor} from "./contollers/authorContoller.mjs";
+import {
+  createblog,
+  getBlogs,
+  blogsByName,
+  AuthorById,
+  blogDelete,
+  deleteBlogsByQuery,
+  updateBlog,
+} from "./contollers/blogsContoller.mjs";
+import { createAuthor,allAuthor,findAuthor} from "./contollers/authorContoller.mjs";
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -9,7 +17,12 @@ router.get("/", (req, res) => {
 
 router.post("/blogs", createblog);
 router.post("/authors", createAuthor);
+router.get("/authors", allAuthor);
+router.get("/authors/:id", findAuthor);
 router.get("/blogs", getBlogs);
 router.get("/blogs/:category", blogsByName);
 router.get("/blogs/:id", AuthorById);
+router.delete("/blogs/:id", blogDelete);
+router.delete("/blogs", deleteBlogsByQuery);
+router.put("/blogs/:blogId", updateBlog);
 export default router;

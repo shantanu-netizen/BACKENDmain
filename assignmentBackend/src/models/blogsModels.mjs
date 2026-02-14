@@ -5,14 +5,12 @@ const blogsSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-     
     },
 
     body: {
       type: String,
       required: true,
-     
-        },
+    },
 
     authorId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -28,7 +26,6 @@ const blogsSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      
     },
 
     subcategory: {
