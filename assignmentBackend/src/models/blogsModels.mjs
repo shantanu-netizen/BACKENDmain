@@ -4,18 +4,18 @@ const blogsSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: [true, "title is required."],
     },
 
     body: {
       type: String,
-      required: true,
+      required: [true, "body is required."],
     },
 
     authorId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Author",
-      required: true,
+      required: [true, "id is required."],
     },
 
     tags: {
@@ -25,7 +25,7 @@ const blogsSchema = new mongoose.Schema(
 
     category: {
       type: String,
-      required: true,
+      required: [true, "category is required."],
     },
 
     subcategory: {
@@ -50,7 +50,7 @@ const blogsSchema = new mongoose.Schema(
 
     publishedAt: {
       type: Date,
-      default: null,
+      default: Date.now(),
     },
   },
   {
