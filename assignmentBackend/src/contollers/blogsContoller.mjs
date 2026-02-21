@@ -96,7 +96,7 @@ const deleteBlogsByQuery = async (req, res) => {
     if (subcategory) {
       query.subcategory = { $in: subcategory };
     }
-    if (isPublished !== undefined) query.isPublished = isPublished === "true";
+    if (isPublished !== undefined) query.isPublished = isPublished === "false";
 
     let blog = await blogModel.deleteMany(query);
 

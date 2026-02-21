@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const blogsSchema = new mongoose.Schema(
   {
     title: {
