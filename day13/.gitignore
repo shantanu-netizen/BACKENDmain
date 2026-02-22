@@ -1,0 +1,7 @@
+# Dependencies - never commit
+node_modules/
+
+# Environment variables - never commit (secrets, keys)
+.env
+.env.local
+.env.*.local

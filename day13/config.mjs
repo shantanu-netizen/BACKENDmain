@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 dotenv.config()
-let uri = process.env.MONGODB_URI;
+let uri = process.env.MONGODBURI;
 let port = process.env.PORT;
-export { uri, port };
+let JWT_SECRET = process.env.secretToken;
+export { uri, port, JWT_SECRET };
